@@ -31,6 +31,7 @@ const config = [
       ".next/*",
       "public/*",
       "out/*",
+      ".vercel/*",
     ],
   },
   ...nextConfig,
