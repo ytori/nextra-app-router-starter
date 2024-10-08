@@ -1,0 +1,14 @@
+name: verify
+on: [push, pull_request]
+defaults:
+  run:
+    shell: bash
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - run: pnpm install
+      - run: pnpm prettier
+      - run: pnpm build
