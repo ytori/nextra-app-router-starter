@@ -1,6 +1,6 @@
-/* eslint-env node */
 import { Layout, Navbar } from "nextra-theme-docs";
 import { Banner, Head } from "nextra/components";
+import "./globals.css";
 
 export const { viewport } = Head;
 
@@ -24,7 +24,11 @@ export const metadata = {
   },
 };
 
-export default async function RootLayout({ children }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const { pageMap } = await import(
     "../../.next/static/chunks/nextra-page-map-.mjs"
   );

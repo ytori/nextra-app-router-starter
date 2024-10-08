@@ -1,8 +1,7 @@
-/* eslint-env node */
-/* eslint-disable react-hooks/rules-of-hooks -- false positive, useMDXComponents/useTOC are not react hooks */
-
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { useMDXComponents } from "nextra-theme-docs";
+import React from "react";
 
 export async function generateStaticParams() {
   const { RouteToFilepath } = await import(
@@ -13,12 +12,22 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params: { mdxPath } }) {
+export async function generateMetadata({
+  params: { mdxPath },
+}: {
+  params: { mdxPath: string[] };
+}): Promise<Metadata> {
   const { metadata } = await loadPage(mdxPath);
   return metadata;
 }
 
-export default async function Page({ params: { mdxPath } }) {
+export default async function Page({
+  params: { mdxPath },
+}: {
+  params: {
+    mdxPath: string[];
+  };
+}) {
   const {
     default: MDXContent,
     useTOC,
@@ -35,12 +44,19 @@ export default async function Page({ params: { mdxPath } }) {
   );
 }
 
-async function loadPage(mdxPath = []) {
+async function loadPage(mdxPath: string[] = []): Promise<{
+  default: React.ElementType;
+  useTOC: () => never;
+  metadata: Metadata;
+  title: never;
+}> {
   const { RouteToFilepath } = await import(
     "../../../.next/static/chunks/nextra-page-map-.mjs"
   );
   try {
-    return await import(`../../../mdx/${RouteToFilepath[mdxPath.join("/")]}`);
+    return await import(
+      `../../../mdx/${(RouteToFilepath as Record<string, string>)[mdxPath.join("/")]}`
+    );
   } catch {
     notFound();
   }

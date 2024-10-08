@@ -1,0 +1,5 @@
+pnpm-lock.yaml
+.pnpm-store
+.next
+public
+out
