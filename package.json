@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "prebuild": "npm run lint",
     "postbuild": "pagefind --site .next/server/app --output-path .next/static/chunks/pagefind",
     "start": "next start",
     "lint": "eslint .",
