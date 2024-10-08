@@ -1,17 +1,21 @@
 # Nextra App Router Starter
 
-This is a starter kit for creating websites by combining [Nextra](https://nextra.site/) with Next.js's [App Router](https://nextjs.org/docs/app).
+This is a starter kit for creating websites using [Nextra](https://nextra.site/) with Next.js [App Router](https://nextjs.org/docs/app).
 
 # Features
 
 As mentioned in [this issue](https://github.com/shuding/nextra/issues/2023), Nextra does not currently support the App Router in its current release version, v3. Support for the App Router is planned for Nextra v4, which has a pre-release version available.
 
-This repository aims to enable quick website building with Nextra + App Router by adding the following configurations based on the [example](https://github.com/shuding/nextra/tree/v4-v2/examples/docs) provided by Nextra:
+This repository aims to enable quick website building with Nextra + App Router by adding the following configurations based on the [App Router example](https://github.com/shuding/nextra/tree/v4-v2/examples/docs) provided by Nextra:
 
 - [TypeScript](https://www.typescriptlang.org/)
-- [ESLint v9](https://eslint.org/) ([Flat Config](https://eslint.org/docs/latest/use/configure/configuration-files))
+- [ESLint v9](https://eslint.org/) - [Flat Config](https://eslint.org/docs/latest/use/configure/configuration-files)
 - [Prettier](https://prettier.io/)
 - [Tailwind](https://tailwindcss.com/)
+
+# Demo Site
+
+You can check it out [here](https://nextra-app-router-starter.vercel.app/).
 
 # Getting Started
 
@@ -25,16 +29,16 @@ Please check the version in [package.json](./package.json).
 ## Commands
 
 ```sh
-# Install
+# Install dependencies
 pnpm install
 
-# Development
+# Start development server
 pnpm dev
 
-# Build
+# Build the project
 pnpm build
 
-# Start
+# Start the production server
 pnpm start
 ```
 
@@ -44,7 +48,7 @@ For more details, please refer to [package.json](./package.json).
 
 ## Static Export
 
-You can perform a [static export](https://nextjs.org/docs/app/building-your-application/deploying/static-exports) by following these steps:
+You can start with a [static export](https://nextjs.org/docs/app/building-your-application/deploying/static-exports) by following these steps:
 
 - Modify [next.config.mjs](./next.config.mjs) as follows:
 
@@ -72,13 +76,13 @@ export default withNextra({
   },
 ```
 
-- Build and preview on the developer's PC if needed using the following commands:
+- Build and preview on your PC if needed using the following commands:
 
 ```sh
-# Build
+# Build the project
 pnpm build
 
-# Preview
+# Preview the build
 pnpm preview
 ```
 
@@ -86,4 +90,4 @@ pnpm preview
 
 ## About [Search](https://nextra.site/docs/guide/search)
 
-Please note that it is not available during development (`pnpm dev`).
+Please note that search functionality is not available during development (`pnpm dev`).
