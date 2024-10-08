@@ -4,7 +4,7 @@ defaults:
   run:
     shell: bash
 jobs:
-  translate:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
