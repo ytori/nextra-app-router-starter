@@ -1,0 +1,36 @@
+{
+  "name": "nextra-app-router-starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "prettier": "prettier . --check",
+    "prettier:fix": "prettier . --write",
+    "clean": "rimraf .next .turbo",
+    "postbuild": "pagefind --site .next/server/app --output-path .next/static/chunks/pagefind"
+  },
+  "dependencies": {
+    "next": "14.2.14",
+    "nextra": "^4.0.0-app-router.0",
+    "nextra-theme-docs": "^4.0.0-app-router.0",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.14",
+    "eslint-config-prettier": "^9.1.0",
+    "postcss": "^8",
+    "prettier": "^3.3.3",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  },
+  "packageManager": "pnpm@9.9.0+sha256.7a4261e50d9a44d9240baf6c9d6e10089dcf0a79d0007f2a26985a6927324177"
+}
